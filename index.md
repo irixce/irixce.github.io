@@ -16,7 +16,7 @@ layout: default
 > [The Center for Brains, Minds, and Machines](https://cbmm.mit.edu/) at MIT, and 
 > [The Rowland Institute](https://www2.rowland.harvard.edu/) at Harvard University.
 
-> Outside of coding, I am passionate about writing, music, and foreign languages.
+> Outside of coding, I am passionate about writing, music, and foreign languages!
 
 <br>
 <br>
