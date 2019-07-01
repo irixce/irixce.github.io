@@ -1,0 +1,18 @@
+- title: Home
+  url: /index2.html
+- title: Posts
+  url: /index2.html
+- title: Contact
+  url: /index2.html
+- title: Store
+  url: /index2.html
+- title: Support
+  url: /index2.html
+  sublinks:
+    - title: FAQ
+      url: /index2.html
+    - title: Documentation
+      url: /index2.html
+    - title: separator
+    - title: Customer Support
+      url: /index2.html

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<h1> Check 'em out </h1>
+
+{{content}}
+
+<br>
+
+{% for post in site.posts %}
+
+<a  href="{{post.url}}">
+
+    <div style="background-color: black ; padding-bottom: 20px; padding-left: 22px; border: 2px solid white; border-radius: 20px;">
+
+        <h2 style="font-family: 'Helvetica Neue', 'Courier New', 'Avenir'; font-size: 50px; color: white;">{{post.title}}</h2>
+
+        <h4 style="font-family: 'Andale Mono'; font-size: 20px; color: lightgray;">{{post.date | date: '%B %d, %Y'}}</h4>
+            <br>
+            {% for category in post.categories %}
+            <div style="background-color: dodgerblue; padding-top: 2px; padding-bottom: 2px; padding-left: 10px; padding-right: 10px; display: inline-block; color: white; font-family: Arial, Tahoma; border-radius: 25px; ">{{category}}</div>
+            {% endfor %}
+
+
+    </div>
+
+ </a>
+
+<br>
+
+{% endfor %}
+
+
