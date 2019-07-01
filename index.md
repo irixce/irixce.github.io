@@ -12,7 +12,7 @@ layout: default
 
 > Hi there! I'm Ira -- software engineer & computer science undergraduate at the University of Massachusetts Boston. 
 
-> Previously, I was a software & research intern at [IBM Research](http://www.research.ibm.com/) in Yorktown, New York, 
+> Previously, I worked as a software & research intern at [IBM Research](http://www.research.ibm.com/) in Yorktown, New York, 
 > [The Center for Brains, Minds, and Machines](https://cbmm.mit.edu/) at MIT, and 
 > [The Rowland Institute](https://www2.rowland.harvard.edu/) at Harvard University.
 
