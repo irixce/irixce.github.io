@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python Pandas: Copying a Column of a DataFrame | Ira Ceka</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Python Pandas: Copying a Column of a DataFrame" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Problem Statement 1: Updating An Existing DataFrame Given a sample pandas DataFrame df with two columns containing user name and age, we want to update df with a copy of the age column." />
+<meta property="og:description" content="Problem Statement 1: Updating An Existing DataFrame Given a sample pandas DataFrame df with two columns containing user name and age, we want to update df with a copy of the age column." />
+<link rel="canonical" href="http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html" />
+<meta property="og:url" content="http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html" />
+<meta property="og:site_name" content="Ira Ceka" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-03T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"Problem Statement 1: Updating An Existing DataFrame Given a sample pandas DataFrame df with two columns containing user name and age, we want to update df with a copy of the age column.","@type":"BlogPosting","url":"http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html","headline":"Python Pandas: Copying a Column of a DataFrame","dateModified":"2018-10-03T00:00:00-04:00","datePublished":"2018-10-03T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+<div class="navbar">
+    
+        
+            
+            
+            
+                <div class="dropdown">
+
+
+                    <button class="dropbtn">
+                        <a style="color: white;" href="http://localhost:4000/all-posts.html">Posts</a>
+                    </button>
+
+                <!-- <div>
+                    <div>
+                        <a href="http://localhost:4000/all-posts.html">Posts</a>
+                    </div>
+                </div> -->
+
+                </div>
+
+            
+        
+            
+            
+            
+                <div class="dropdown">
+
+
+                    <button class="dropbtn">
+                        <a style="color: white;" href="http://localhost:4000/">Home</a>
+                    </button>
+
+                <!-- <div>
+                    <div>
+                        <a href="http://localhost:4000/">Home</a>
+                    </div>
+                </div> -->
+
+                </div>
+
+            
+        
+</div>
+
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+
+        <!-- <header>
+            <h1>Python Pandas: Copying a Column of a DataFrame</h1>
+            <h2>GitHub Pages</h2>
+        </header> -->
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+
+              <section id="main_content">
+                  <h1> Python Pandas: Copying a Column of a DataFrame</h1>
+<h3>October 03, 2018</h3>
+<br>
+
+<h2 id="problem-statement-1-updating-an-existing-dataframe">Problem Statement 1: Updating An Existing DataFrame</h2>
+
+<p>Given a sample pandas DataFrame <code class="highlighter-rouge">df</code> with two columns containing user <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">age</code>, 
+we want to update <code class="highlighter-rouge">df</code> with a copy of the <code class="highlighter-rouge">age</code> column.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># A pre-existing data-frame df with a name and age column, 3 entries each 
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">df</span>
+    <span class="n">name</span>    <span class="n">age</span>
+<span class="mi">0</span>   <span class="n">Alex</span>      <span class="mi">3</span>
+<span class="mi">1</span>   <span class="n">Annie</span>     <span class="mi">4</span>
+<span class="mi">2</span>   <span class="n">Jess</span>      <span class="mi">5</span></code></pre></figure>
+
+<p>Executing <code class="highlighter-rouge">df['age_copy'] = df['age']</code> will update the DataFrame <code class="highlighter-rouge">df</code> with a newly-added column labeled <code class="highlighter-rouge">age_copy</code>.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># df updated with a new column, age_copy
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s">'age_copy'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">df</span>
+    <span class="n">name</span>    <span class="n">age</span>   <span class="n">age_copy</span>
+<span class="mi">0</span>   <span class="n">Alex</span>      <span class="mi">3</span>          <span class="mi">3</span>
+<span class="mi">1</span>   <span class="n">Annie</span>     <span class="mi">4</span>          <span class="mi">4</span>
+<span class="mi">2</span>   <span class="n">Jess</span>      <span class="mi">5</span>          <span class="mi">5</span></code></pre></figure>
+
+<h2 id="problem-statement-2-creating-a-new-dataframe">Problem Statement 2: Creating a New DataFrame</h2>
+
+<p>Given a sample pandas DataFrame <code class="highlighter-rouge">df</code> with two columns containing user <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">age</code>, 
+we want to create a new DataFrame, <code class="highlighter-rouge">df_new</code>, with a copy of <code class="highlighter-rouge">df</code>’s <code class="highlighter-rouge">age</code> column.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># A pre-existing data-frame df with a name and age column, 3 entries each 
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">df</span>
+    <span class="n">name</span>    <span class="n">age</span>
+<span class="mi">0</span>   <span class="n">Alex</span>      <span class="mi">3</span>
+<span class="mi">1</span>   <span class="n">Annie</span>     <span class="mi">4</span>
+<span class="mi">2</span>   <span class="n">Jess</span>      <span class="mi">5</span></code></pre></figure>
+
+<p>Executing <code class="highlighter-rouge">df_new = pd.DataFrame({'age_copy': df['age']})</code> creates a new DataFrame <code class="highlighter-rouge">df_new</code> with a column 
+labeled <code class="highlighter-rouge">age_copy</code>,which is populated with content copied from <code class="highlighter-rouge">df['age']</code>.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># A new data-frame df_new
+# its age_copy column is copied from df
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">df_new</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'age_copy'</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">]})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">df</span>
+    <span class="n">age_copy</span>
+<span class="mi">0</span>          <span class="mi">3</span>
+<span class="mi">1</span>          <span class="mi">4</span>
+<span class="mi">2</span>          <span class="mi">5</span></code></pre></figure>
+
+              </section>
+
+        <footer>
+        
+          This page was built by Ira using <a href="https://jekyllrb.com">Jekyll</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-143169000-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </body>
+
+
+</html>
