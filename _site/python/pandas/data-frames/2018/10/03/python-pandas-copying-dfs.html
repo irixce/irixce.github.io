@@ -11,19 +11,19 @@
     <![endif]-->
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Python Pandas: Copying a Column of a DataFrame | Ira Ceka</title>
+<title>Python Pandas: Tips &amp; Tricks | Ira C.</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Python Pandas: Copying a Column of a DataFrame" />
+<meta property="og:title" content="Python Pandas: Tips &amp; Tricks" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Problem Statement 1: Updating An Existing DataFrame Given a sample pandas DataFrame df with two columns containing user name and age, we want to update df with a copy of the age column." />
-<meta property="og:description" content="Problem Statement 1: Updating An Existing DataFrame Given a sample pandas DataFrame df with two columns containing user name and age, we want to update df with a copy of the age column." />
+<meta name="description" content="Copying a Column of a DataFrame" />
+<meta property="og:description" content="Copying a Column of a DataFrame" />
 <link rel="canonical" href="http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html" />
 <meta property="og:url" content="http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html" />
-<meta property="og:site_name" content="Ira Ceka" />
+<meta property="og:site_name" content="Ira C." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-10-03T00:00:00-04:00" />
 <script type="application/ld+json">
-{"description":"Problem Statement 1: Updating An Existing DataFrame Given a sample pandas DataFrame df with two columns containing user name and age, we want to update df with a copy of the age column.","@type":"BlogPosting","url":"http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html","headline":"Python Pandas: Copying a Column of a DataFrame","dateModified":"2018-10-03T00:00:00-04:00","datePublished":"2018-10-03T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html"},"@context":"https://schema.org"}</script>
+{"description":"Copying a Column of a DataFrame","@type":"BlogPosting","url":"http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html","headline":"Python Pandas: Tips &amp; Tricks","dateModified":"2018-10-03T00:00:00-04:00","datePublished":"2018-10-03T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python/pandas/data-frames/2018/10/03/python-pandas-copying-dfs.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -80,7 +80,7 @@
 
 
         <!-- <header>
-            <h1>Python Pandas: Copying a Column of a DataFrame</h1>
+            <h1>Python Pandas: Tips & Tricks</h1>
             <h2>GitHub Pages</h2>
         </header> -->
         <section id="downloads" class="clearfix">
@@ -90,10 +90,12 @@
         <hr>
 
               <section id="main_content">
-                  <h1> Python Pandas: Copying a Column of a DataFrame</h1>
-<h3>October 03, 2018</h3>
+                  <h1> Python Pandas: Tips & Tricks</h1>
+<h4>October 03, 2018</h4>
 <br><br>
-<h2 id="problem-statement-1-updating-an-existing-dataframe">Problem Statement 1: Updating An Existing DataFrame</h2>
+<h2 id="copying-a-column-of-a-dataframe">Copying a Column of a DataFrame</h2>
+
+<h3 id="problem-statement-1-updating-an-existing-dataframe">Problem Statement 1: Updating An Existing DataFrame</h3>
 
 <p>Given a sample pandas DataFrame <code class="highlighter-rouge">df</code> with two columns containing user <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">age</code>, 
 we want to update <code class="highlighter-rouge">df</code> with a copy of the <code class="highlighter-rouge">age</code> column.</p>
@@ -115,7 +117,7 @@ we want to update <code class="highlighter-rouge">df</code> with a copy of the <
 <span class="mi">1</span>   <span class="n">Annie</span>     <span class="mi">4</span>          <span class="mi">4</span>
 <span class="mi">2</span>   <span class="n">Jess</span>      <span class="mi">5</span>          <span class="mi">5</span></code></pre></figure>
 
-<h2 id="problem-statement-2-creating-a-new-dataframe">Problem Statement 2: Creating a New DataFrame</h2>
+<h3 id="problem-statement-2-creating-a-new-dataframe">Problem Statement 2: Creating a New DataFrame</h3>
 
 <p>Given a sample pandas DataFrame <code class="highlighter-rouge">df</code> with two columns containing user <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">age</code>, 
 we want to create a new DataFrame, <code class="highlighter-rouge">df_new</code>, with a copy of <code class="highlighter-rouge">df</code>’s <code class="highlighter-rouge">age</code> column.</p>
@@ -133,7 +135,7 @@ labeled <code class="highlighter-rouge">age_copy</code>,which is populated with 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># A new data-frame df_new
 # its age_copy column is copied from df
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">df_new</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'age_copy'</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">]})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">df</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">df_new</span>
     <span class="n">age_copy</span>
 <span class="mi">0</span>          <span class="mi">3</span>
 <span class="mi">1</span>          <span class="mi">4</span>
@@ -143,7 +145,7 @@ labeled <code class="highlighter-rouge">age_copy</code>,which is populated with 
 
         <footer>
         
-          This page was built by Ira using <a href="https://jekyllrb.com">Jekyll. </a> Contact: <a href=""> iceka@mit.edu</a>
+          This page was built by Ira using <a href="https://jekyllrb.com">Jekyll. </a> Contact: <a href=""> cekaira@gmail.com</a>
         </footer>
 
       </div>
