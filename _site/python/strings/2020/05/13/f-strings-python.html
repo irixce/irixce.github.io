@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>f-strings in Python | Ira C.</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="f-strings in Python" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Formatting strings is one of the most common operations in programming. If you program in Python, you are probably aware of the %s, str.format(), or the string.Template methods for string formatting. While each method has its own advantages, there are also some limitations." />
+<meta property="og:description" content="Formatting strings is one of the most common operations in programming. If you program in Python, you are probably aware of the %s, str.format(), or the string.Template methods for string formatting. While each method has its own advantages, there are also some limitations." />
+<link rel="canonical" href="http://localhost:4000/python/strings/2020/05/13/f-strings-python.html" />
+<meta property="og:url" content="http://localhost:4000/python/strings/2020/05/13/f-strings-python.html" />
+<meta property="og:site_name" content="Ira C." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-13T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"Formatting strings is one of the most common operations in programming. If you program in Python, you are probably aware of the %s, str.format(), or the string.Template methods for string formatting. While each method has its own advantages, there are also some limitations.","@type":"BlogPosting","url":"http://localhost:4000/python/strings/2020/05/13/f-strings-python.html","headline":"f-strings in Python","dateModified":"2020-05-13T00:00:00-04:00","datePublished":"2020-05-13T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python/strings/2020/05/13/f-strings-python.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+<div class="navbar">
+    
+        
+            
+            
+            
+                <div class="dropdown">
+
+
+                    <button class="dropbtn">
+                        <a style="color: white;" href="http://localhost:4000/all-posts.html">Posts</a>
+                    </button>
+
+                <!-- <div>
+                    <div>
+                        <a href="http://localhost:4000/all-posts.html">Posts</a>
+                    </div>
+                </div> -->
+
+                </div>
+
+            
+        
+            
+            
+            
+                <div class="dropdown">
+
+
+                    <button class="dropbtn">
+                        <a style="color: white;" href="http://localhost:4000/">Home</a>
+                    </button>
+
+                <!-- <div>
+                    <div>
+                        <a href="http://localhost:4000/">Home</a>
+                    </div>
+                </div> -->
+
+                </div>
+
+            
+        
+</div>
+
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+
+        <!-- <header>
+            <h1>f-strings in Python</h1>
+            <h2>GitHub Pages</h2>
+        </header> -->
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+
+              <section id="main_content">
+                  <h1> f-strings in Python</h1>
+<h4>May 13, 2020</h4>
+<br><br>
+<p>Formatting strings is one of the most common operations in programming.
+If you program in Python, you are probably aware of the  <code class="highlighter-rouge">%s</code>, <code class="highlighter-rouge">str.format()</code>,  or the <code class="highlighter-rouge">string.Template</code> methods for string formatting.
+While each method has its own advantages, there are also some limitations.</p>
+
+<p>Python 3.6 introduces a simpler, concise, and more readable way of formatting string literals with <strong>f-strings</strong>, or “formatted strings”.</p>
+
+<p>Within f-strings, <code class="highlighter-rouge">{}</code> are used as</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">f</span><span class="s">'{val}'</span>
+<span class="s">'25'</span></code></pre></figure>
+
+<p>F-strings can also be used to perform evaluations on any valid Python expressions, including function and method calls:</p>
+
+<p>For example, we can evaluate the value of dictionary <code class="highlighter-rouge">d</code> using its key <code class="highlighter-rouge">name</code>:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Ira"</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s">'{d["name"]}'</span>
+<span class="s">"Ira"</span></code></pre></figure>
+
+<blockquote>
+
+</blockquote>
+
+<p>Or we can use it to print multiples of 20:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Example {x} : {20*x}'</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Example</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">Example</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">20</span>
+<span class="n">Example</span> <span class="mi">2</span> <span class="p">:</span> <span class="mi">40</span></code></pre></figure>
+
+<p>We can also define a recursive function, <code class="highlighter-rouge">fib(n)</code>, that returns the n-th Fibonacci number and use f-strings
+to format the result.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> </code></pre></figure>
+
+<p>We first define a variable <code class="highlighter-rouge">n</code> to denote the n-th Fibonacci number we’d like to return.
+Within the f-string, a placeholder is used to hold the variable value and a call to the function is made within the <code class="highlighter-rouge">{}</code> of the f-string.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s">'The {n}th Fibonacci number is {fib(n)}'</span>
+<span class="s">'The 4th Fibonacci number is 3'</span></code></pre></figure>
+
+
+              </section>
+
+        <footer>
+        
+          This page was built by Ira using <a href="https://jekyllrb.com">Jekyll. </a> Contact: <a href=""> cekaira@gmail.com</a>
+        </footer>
+
+      </div>
+    </div>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-143169000-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </body>
+
+
+</html>

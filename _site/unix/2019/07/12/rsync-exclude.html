@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>rsync: Excluding Folders and Directories in File Transfers | Ira C.</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="rsync: Excluding Folders and Directories in File Transfers" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The process of copying files across directories, either remotely or locally, is a common operation for everyday command-line users." />
+<meta property="og:description" content="The process of copying files across directories, either remotely or locally, is a common operation for everyday command-line users." />
+<link rel="canonical" href="http://localhost:4000/unix/2019/07/12/rsync-exclude.html" />
+<meta property="og:url" content="http://localhost:4000/unix/2019/07/12/rsync-exclude.html" />
+<meta property="og:site_name" content="Ira C." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-12T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"The process of copying files across directories, either remotely or locally, is a common operation for everyday command-line users.","@type":"BlogPosting","url":"http://localhost:4000/unix/2019/07/12/rsync-exclude.html","headline":"rsync: Excluding Folders and Directories in File Transfers","dateModified":"2019-07-12T00:00:00-04:00","datePublished":"2019-07-12T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/unix/2019/07/12/rsync-exclude.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+<div class="navbar">
+    
+        
+            
+            
+            
+                <div class="dropdown">
+
+
+                    <button class="dropbtn">
+                        <a style="color: white;" href="http://localhost:4000/all-posts.html">Posts</a>
+                    </button>
+
+                <!-- <div>
+                    <div>
+                        <a href="http://localhost:4000/all-posts.html">Posts</a>
+                    </div>
+                </div> -->
+
+                </div>
+
+            
+        
+            
+            
+            
+                <div class="dropdown">
+
+
+                    <button class="dropbtn">
+                        <a style="color: white;" href="http://localhost:4000/">Home</a>
+                    </button>
+
+                <!-- <div>
+                    <div>
+                        <a href="http://localhost:4000/">Home</a>
+                    </div>
+                </div> -->
+
+                </div>
+
+            
+        
+</div>
+
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+
+        <!-- <header>
+            <h1>rsync: Excluding Folders and Directories in File Transfers</h1>
+            <h2>GitHub Pages</h2>
+        </header> -->
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+
+              <section id="main_content">
+                  <h1> rsync: Excluding Folders and Directories in File Transfers</h1>
+<h4>July 12, 2019</h4>
+<br><br>
+<p>The process of copying files across directories, either remotely or locally, is a common operation for everyday command-line users.</p>
+
+<p>Like <code class="highlighter-rouge">scp</code>, <code class="highlighter-rouge">rsync</code> can be used for transferring files from a source to a destination. <code class="highlighter-rouge">rsync</code> differs from <code class="highlighter-rouge">scp</code> in the way that it copies files; it is said to be better optimized for backups and syncs and more reliable than <code class="highlighter-rouge">scp</code> .</p>
+
+<p>Particularly beneficial is the <code class="highlighter-rouge">--exclude</code> option, which comes in handy for excluding specific files and directories in recursive transfers.</p>
+
+<h2 id="example-1-copying-from-a-remote-server-to-a-local-machine">Example 1: Copying from a Remote Server to a Local Machine</h2>
+
+<p>In this example, we are copying files from a remote server to a local folder <code class="highlighter-rouge">copy_TO_folder_local</code> on a Mac machine.</p>
+
+<p>This command will recursively copy files contained within <code class="highlighter-rouge">/some_remote_folder</code> on the remote server, <strong>excluding</strong> the folders <code class="highlighter-rouge">Desktop</code> and <code class="highlighter-rouge">Downloads</code>, as well as the file <code class="highlighter-rouge">exclude_me.txt</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -r --exclude=Desktop/ --exclude=Downloads/ --exclude=exclude_me.txt ira@remote.server.com:some_remote_folder/* /Users/ira/copy_TO_folder_local
+</code></pre></div></div>
+
+<h2 id="example-2-copying-across-a-local-machine">Example 2: Copying Across a Local Machine</h2>
+<p>In this example, we are copying files across folders located on the local machine.</p>
+
+<p>This command will copy all the content from <code class="highlighter-rouge">copy_FROM_folder_local</code> to <code class="highlighter-rouge">copy_TO_folder_local</code>, <strong>excluding</strong> the folders <code class="highlighter-rouge">Desktop</code> and <code class="highlighter-rouge">Downloads</code>, as well as the file <code class="highlighter-rouge">exclude_me.txt</code>.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -r --exclude=Desktop/ --exclude=Downloads/ --exclude=exclude_me.txt /Users/ira/copy_FROM_folder_local/* /Users/ira/copy_TO_folder_local
+</code></pre></div></div>
+
+<p>Adjust the number of <code class="highlighter-rouge">--exclude</code> options to match the number of directories and files you want to exclude from the recursive copy.</p>
+
+              </section>
+
+        <footer>
+        
+          This page was built by Ira using <a href="https://jekyllrb.com">Jekyll. </a> Contact: <a href=""> cekaira@gmail.com</a>
+        </footer>
+
+      </div>
+    </div>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-143169000-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </body>
+
+
+</html>
