@@ -5,12 +5,13 @@ date:   2020-05-13
 categories: python strings
 ---
 
-If you program in Python, you are probably aware of the  `%s`, `str.format()`,  or the `string.Template` methods.
+Formatting strings is one of the most common operations in programming.
+If you program in Python, you are probably aware of the  `%s`, `str.format()`,  or the `string.Template` methods for string formatting.
+While each method has its own advantages, there are also some limitations.
 
-f-strings, or "formatted strings" were introduced in Python 3.6, and offer a simpler, concise, more readable
-way of formatting string literals.
+Python 3.6 introduces a simpler, concise, and more readable way of formatting string literals with **f-strings**, or "formatted strings".
 
-It can be used to variables into placeholders:
+Within f-strings, `{}` are used as 
 
 {% highlight python %}
 >>> val = 25
@@ -56,13 +57,4 @@ Within the f-string, a placeholder is used to hold the variable value and a call
 >>> n = 4
 >>> f'The {n}th Fibonacci number is {fib(n)}'
 'The 4th Fibonacci number is 3'
-{% endhighlight %}
-
-
-Use this to append zeros
-You can also use lambda expressions:
-
-{% highlight python %}
->>> f'{(lambda x: x*x)(5)}'
-'25'
 {% endhighlight %}
