@@ -10,7 +10,7 @@ layout: default
 <br>
 <br>
 
-> Hi there! I'm Ira -- software engineer & computer science undergraduate at the University of Massachusetts Boston. 
+> Hi there! I'm Ira. I'm a recent computer science graduate from the University of Massachusetts Boston. 
 
 > Previously, I worked as a software & research intern at [IBM Research](http://www.research.ibm.com/) in Yorktown, New York, 
 > [The Center for Brains, Minds, and Machines](https://cbmm.mit.edu/) at MIT, and 
