@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<h1> Projects & Research </h1>
+
+{{content}}
+
+<br>
+
+    {% for project in site.projects %}
+    <!-- <a  href="{{project.url}}"> -->
+    <h2 style="font-family: 'Helvetica Neue', 'Courier New', 'Avenir'; font-size: 30px; color: steelblue;">{{project.title}}</h2>
+    {{ project.description }} <br> <br>
+
+    {% endfor %}
+
+
+
+ </a>
+
+<br>
+
+
+

@@ -3,3 +3,7 @@ description: GitHub Pages
 show_downloads: false
 google_analytics: UA-143169000-1
 theme: jekyll-theme-tactile
+collections:
+  projects:
+    output: true
+    permalink: /:title/
