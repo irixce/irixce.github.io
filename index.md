@@ -16,7 +16,7 @@ layout: default
 > Previously, she worked as a software & research intern at [IBM Research](http://www.research.ibm.com/) in Yorktown, New York, 
 > the Poggio Lab at [The Center for Brains, Minds, and Machines](https://cbmm.mit.edu/) of MIT, 
 > the RoLi Lab at the [The Rowland Institute](https://www2.rowland.harvard.edu/) of Harvard University, 
-> as well as a deep-learning startup, DeepCure, out of MIT. 
+> and a deep-learning startup, DeepCure, out of MIT. 
 
 > Ira is a recipient of several accolades and awards. As a Summa Cum Laude undergraduate, she was awarded Departmental Distinction from the Department of Computer 
 > Science. In 2018, she was selected as a CRA-W Grace Hopper Research Scholar and has been awarded research fellowships funded by the NSF and Oracle. 
